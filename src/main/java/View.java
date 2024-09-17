@@ -13,6 +13,7 @@ public class View extends Application {
         primaryStage.getIcons().add(new Image("/dog.png"));
         Pane root = FXMLLoader.load(getClass().getResource("/view2.fxml"));
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

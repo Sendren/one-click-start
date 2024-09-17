@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.Controller">
     <children>
-        <Button fx:id="openAllButton" layoutX="101.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleOpenAllButtonAction" text="一键启动清单应用" />
-        <Button fx:id="deleteButton" layoutX="256.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="删除选中应用" />
+        <Button fx:id="openAllButton" layoutX="27.0" layoutY="357.0" mnemonicParsing="false"
+                onAction="#handleOpenAllButtonAction" text="一键启动清单应用"/>
+        <Button fx:id="deleteAllButton" layoutX="199.0" layoutY="357.0" mnemonicParsing="false"
+                onAction="#handleDeleteAllButtonAction" text="删除选中应用"/>
         <TableView fx:id="tableViewStartAll" layoutX="27.0" layoutY="26.0" prefHeight="320.0" prefWidth="260.0"
                    onDragOver="#onDragOver" onDragDropped="#onDragDroppedForStartAll">
             <columns>
-                <TableColumn fx:id="nameStartAll" prefWidth="277.20001220703125" text="一键启动应用清单" />
+                <TableColumn fx:id="nameStartAll" prefWidth="277.20001220703125" text="一键启动应用清单"/>
             </columns>
         </TableView>
-      <Button fx:id="openFavorButton" layoutX="408.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleOpenFavorButtonAction" text="启动选中收藏应用" />
-      <TableView fx:id="tableViewStartFavor" layoutX="310.0" layoutY="26.0" prefHeight="320.0" prefWidth="260.0"
-                 onDragOver="#onDragOver" onDragDropped="#onDragDroppedForStartFavor">
-         <columns>
-            <TableColumn fx:id="nameStartFavor" prefWidth="277.20001220703125" text="收藏应用" />
-         </columns>
-      </TableView>
+        <Button fx:id="openFavorButton" layoutX="310.0" layoutY="357.0" mnemonicParsing="false"
+                onAction="#handleOpenFavorButtonAction" text="启动选中收藏应用"/>
+        <Button fx:id="deleteFavorButton" layoutX="482.0" layoutY="357.0" mnemonicParsing="false"
+                onAction="#handleDeleteFavorButtonAction" text="删除选中应用"/>
+        <TableView fx:id="tableViewStartFavor" layoutX="310.0" layoutY="26.0" prefHeight="320.0" prefWidth="260.0"
+                   onDragOver="#onDragOver" onDragDropped="#onDragDroppedForStartFavor">
+            <columns>
+                <TableColumn fx:id="nameStartFavor" prefWidth="277.20001220703125" text="收藏应用"/>
+            </columns>
+        </TableView>
     </children>
 </Pane>

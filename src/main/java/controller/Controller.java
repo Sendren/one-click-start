@@ -45,7 +45,10 @@ public class Controller {
     Button openFavorButton;
 
     @FXML
-    Button deleteButton;
+    Button deleteAllButton;
+
+    @FXML
+    Button deleteFavorButton;
 
     /**
      * 数据类 包含 startAllList 和 startFavorList
@@ -54,7 +57,7 @@ public class Controller {
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
-    private String dataPath = "F:\\code\\one-click-start\\data\\data.json";
+    private String dataPath = ".\\data.json";
 
     public void initialize() {
         String s1 = FileUtil.readFile(dataPath);
@@ -131,10 +134,15 @@ public class Controller {
         }
     }
 
-    public void handleDeleteButtonAction(ActionEvent actionEvent) {
+    public void handleDeleteAllButtonAction(ActionEvent actionEvent) {
         AppInfo selectedStartAll = tableViewStartAll.getSelectionModel().getSelectedItem();
-        AppInfo selectedStartFavor = tableViewStartFavor.getSelectionModel().getSelectedItem();
         handleDelete(selectedStartAll, data.getStartAllList(), tableViewStartAll);
+        String s = JSON.toJSONString(data);
+        FileUtil.saveFile(s, dataPath);
+    }
+
+    public void handleDeleteFavorButtonAction(ActionEvent actionEvent) {
+        AppInfo selectedStartFavor = tableViewStartFavor.getSelectionModel().getSelectedItem();
         handleDelete(selectedStartFavor, data.getStartFavorList(), tableViewStartFavor);
         String s = JSON.toJSONString(data);
         FileUtil.saveFile(s, dataPath);
