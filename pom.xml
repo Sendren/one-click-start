@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>one-click-start</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <slf4j.version>1.6.6</slf4j.version>
+        <log4j.version>1.2.12</log4j.version>
+        <activiti.version>7.0.0.Beta1</activiti.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.32</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>22.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.openjfx</groupId>-->
+        <!--            <artifactId>javafx-swt</artifactId>-->
+        <!--            <version>22.0.1</version>-->
+        <!--        </dependency>-->
+
+    </dependencies>
+
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>io.github.fvarrui</groupId>-->
+    <!--                <artifactId>javapackager</artifactId>-->
+    <!--                <version>1.7.6</version>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <phase>package</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>package</goal>-->
+    <!--                        </goals>-->
+    <!--                        <configuration>-->
+    <!--                            &lt;!&ndash; 启动类 &ndash;&gt;-->
+    <!--                            <mainClass>Main</mainClass>-->
+    <!--                            &lt;!&ndash; 绑定自定义JRE路径&ndash;&gt;-->
+    <!--                            <bundleJre>true</bundleJre>-->
+    <!--                            <jrePath>C:\Users\sendren\.jdks\corretto-17.0.11</jrePath>-->
+    <!--                            <generateInstaller>true</generateInstaller>-->
+    <!--                            <administratorRequired>false</administratorRequired>-->
+    <!--                            &lt;!&ndash; 操作系统&ndash;&gt;-->
+    <!--                            <platform>windows</platform>-->
+    <!--                            <copyDependencies>true</copyDependencies>-->
+    <!--                            &lt;!&ndash; 名称与版本&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <displayName>AmtHardwareTest</displayName>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <name>AmtHardwareTest</name>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <version>1.0</version>&ndash;&gt;-->
+    <!--                            &lt;!&ndash; 手动引入额外资源&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <additionalResources>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <additionalResource>D:\Item\GD_AmtHardwareTest1.0\datas</additionalResource>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <additionalResource>D:\Item\GD_AmtHardwareTest1.0\lib</additionalResource>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            </additionalResources>&ndash;&gt;-->
+    <!--                            &lt;!&ndash;详细参数配置&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <winConfig>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <icoFile>D:\Item\GD_AmtHardwareTest1.0\src\main\ico\app.ico</icoFile>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <generateSetup>false</generateSetup>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <generateMsi>false</generateMsi>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <generateMsm>false</generateMsm>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            </winConfig>&ndash;&gt;-->
+    <!--                        </configuration>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>io.github.fvarrui</groupId>-->
+    <!--                <artifactId>javapackager</artifactId>-->
+    <!--                <version>1.7.6</version>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <phase>package</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>package</goal>-->
+    <!--                        </goals>-->
+    <!--                        <configuration>-->
+    <!--                            <mainClass>Main</mainClass>-->
+    <!--                        </configuration>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <!--给jar包起的别名-->
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <!--添加项目中主类-->
+                            <mainClass>Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+
+    </build>
+
+
+</project>

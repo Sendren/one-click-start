@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.Controller">
+    <children>
+        <ButtonBar layoutX="138.0" layoutY="236.0" prefHeight="40.0" prefWidth="200.0"/>
+        <Button fx:id="addButton" layoutX="118.0" layoutY="346.0" mnemonicParsing="false"
+                onAction="#handleAddButtonAction" text="添加"/>
+        <Button fx:id="openButton" layoutX="390.0" layoutY="346.0" mnemonicParsing="false"
+                onAction="#handleOpenButtonAction" text="启动"/>
+        <Button fx:id="deleteButton" layoutX="440.0" layoutY="346.0" mnemonicParsing="false"
+                onAction="#handleDeleteButtonAction" text="删除选中应用"/>
+        <TableView fx:id="tableViewToAdd" layoutX="7.0" layoutY="14.0" prefHeight="320.0" prefWidth="260.0"
+                   onDragOver="#onDragOver" onDragDropped="#onDragDropped">
+            <columns>
+                <TableColumn fx:id="nameToAdd" prefWidth="261.20001220703125" text="待添加应用"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="tableViewAdded" layoutX="293.0" layoutY="14.0" prefHeight="320.0" prefWidth="260.0">
+            <columns>
+                <TableColumn fx:id="nameAdded" prefWidth="277.20001220703125" text="已添加应用" />
+            </columns>
+        </TableView>
+    </children>
+</Pane>
