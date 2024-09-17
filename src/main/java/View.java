@@ -11,7 +11,7 @@ public class View extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("一键启动所有应用");
         primaryStage.getIcons().add(new Image("/dog.png"));
-        Pane root = FXMLLoader.load(getClass().getResource("/view.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("/view2.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }

@@ -14,7 +14,7 @@
         <Button fx:id="deleteButton" layoutX="440.0" layoutY="346.0" mnemonicParsing="false"
                 onAction="#handleDeleteButtonAction" text="删除选中应用"/>
         <TableView fx:id="tableViewToAdd" layoutX="7.0" layoutY="14.0" prefHeight="320.0" prefWidth="260.0"
-                   onDragOver="#onDragOver" onDragDropped="#onDragDropped">
+                   onDragOver="#onDragOver" onDragDropped="#onDragDroppedForStartAll">
             <columns>
                 <TableColumn fx:id="nameToAdd" prefWidth="261.20001220703125" text="待添加应用"/>
             </columns>
